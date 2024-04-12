@@ -21,12 +21,9 @@ from openai import OpenAI
 client = OpenAI(api_key=openai_api_key)
 
 # Credenciais do envio de email
-import re
 import smtplib
-import unicodedata
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import requests
 from lxml.html import document_fromstring
 
 #CÓDIGO

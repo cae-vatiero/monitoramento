@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
@@ -24,13 +24,9 @@ client = OpenAI(api_key=openai_api_key)
 
 # Credenciais do envio de email
 
-import re
-import smtplib
-import unicodedata
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-import requests
 from lxml.html import document_fromstring
 
 from robo import (pega_noticia, adiciona_resumo, identifica_casos_brasileiros,
