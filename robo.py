@@ -301,7 +301,7 @@ def envia_email():
 
 #Automatizando tudo
 
-temas = ["jornalista AND atacado", "imprensa AND atacada"]
+temas = ["jornalista AND atacado", "comunicador AND ameaçado"]
 
 for tema in temas:
     pega_noticia(tema)
