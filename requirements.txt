@@ -1,0 +1,12 @@
+pymongo
+gnews
+python-dotenv
+openai
+nltk
+newspaper3k
+lxml
+lxml.html_clean
+requests
+re
+smtplib
+unicodedata
