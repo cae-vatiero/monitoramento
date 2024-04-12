@@ -1,3 +1,4 @@
+from flask import Flask, render_template
 from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
@@ -35,16 +36,33 @@ from lxml.html import document_fromstring
 from robo import (pega_noticia, adiciona_resumo, identifica_casos_brasileiros,
                   identifica_violacao, classifica_violacao, envia_email)
 
-temas = ["jornalista AND atacado", "imprensa AND atacada"]
+app = Flask(__name__)
 
-for tema in temas:
-    pega_noticia(tema)
-    adiciona_resumo()
-    identifica_casos_brasileiros()
-    identifica_violacao()
-    classifica_violacao()
+@app.route("/raspagem")
+def raspagem():
 
-envia_email()
+    temas = ["jornalista AND atacado", "imprensa AND atacada"]
+
+    for tema in temas:
+        pega_noticia(tema)
+        adiciona_resumo()
+        identifica_casos_brasileiros()
+        identifica_violacao()
+        classifica_violacao()
+
+    envia_email()
+
+    return """
+    <html>
+    <head>
+        <title>Página de Raspagem</title>
+    </head>
+    <body>
+        <h1>Essa é uma página de raspagem</h1>
+        <h1>A raspagem foi realizada.</h1>
+    </body>
+    </html>
+    """
 
 
 
