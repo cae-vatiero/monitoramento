@@ -266,9 +266,10 @@ def envia_email():
 
     # Adiciona cada notícia à mensagem HTML
     for noticia in resposta:
-        titulo, descricao, url, veiculo, categoria = noticia
+        titulo, descricao, data, url, categoria = noticia
         html += f'<li><strong>Título:</strong> {titulo}<br>'
         html += f'<strong>Descrição:</strong> {descricao}<br>'
+        html += f'<strong>Data:</strong> {data}<br>'
         html += f'<strong>URL:</strong> <a href="{url}">{url}</a><br>'
         html += f'<strong>Categoria:</strong> {categoria}</li><br>'
 
