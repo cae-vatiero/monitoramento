@@ -35,7 +35,7 @@ def pega_noticia(tema):
     google_news.country = 'Brasil'
     google_news.language = 'portuguese brasil'
     google_news.period = '7d'
-    google_news.max_results = 2
+    google_news.max_results = 4
 
     lista_noticias = google_news.get_news(tema)
     coluna4 = collection.find({"url": {"$exists":True}})
