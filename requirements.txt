@@ -8,6 +8,4 @@ nltk
 newspaper3k
 lxml
 lxml.html_clean
-requests
-smtplib
-unicodedata
+
