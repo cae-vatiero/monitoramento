@@ -225,6 +225,7 @@ def conteudo_email():
         url = noticia["url"]
         categoria = noticia["categoria e justificativa"]
 
+        # Adiciona cada notícia como uma lista, separando a data e a URL
         resposta.append([titulo, descricao, data, url, categoria])
 
         # Atualiza o campo "e-mail enviado" para indicar que o e-mail foi enviado
@@ -272,6 +273,7 @@ def envia_email():
         html += f'<strong>Data:</strong> {data}<br>'
         html += f'<strong>URL:</strong> <a href="{url}">{url}</a><br>'
         html += f'<strong>Categoria:</strong> {categoria}</li><br>'
+
 
     # Finaliza o corpo HTML do e-mail
     html += """
