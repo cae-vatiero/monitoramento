@@ -295,3 +295,16 @@ def envia_email():
 
     # Envia o email
     return server.sendmail(remetente, destinatarios, mensagem.as_string())
+
+#Automatizando tudo
+
+temas = ["jornalista AND atacado", "imprensa AND atacada"]
+
+for tema in temas:
+    pega_noticia(tema)
+    adiciona_resumo()
+    identifica_casos_brasileiros()
+    identifica_violacao()
+    classifica_violacao()
+
+envia_email()
